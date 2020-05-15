@@ -23,20 +23,10 @@
     }
   },
   "dependencies": {
-    "@rescripts/cli": "0.0.14",
-    "@rescripts/rescript-env": "0.0.12",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "concurrently": "^5.2.0",
-    "electron": "^8.3.0",
-    "electron-builder": "^22.6.0",
-    "electron-is-dev": "^1.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.9.2",
-    "wait-on": "^5.0.0"
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5"
   },
   "homepage": "./",
   "main": "public/electron.js",
@@ -45,9 +35,9 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\" --kill-others",
     "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "npm build",
+    "preelectron-pack": "npm run build",
     "electron-pack": "build -mwl"
   },
   "eslintConfig": {
@@ -64,5 +54,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "rescripts": [
+    "env"
+  ],
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.10",
+    "@rescripts/rescript-env": "^0.0.5",
+    "concurrently": "^4.1.0",
+    "electron": "^4.0.6",
+    "electron-builder": "^20.38.5",
+    "electron-devtools-installer": "^2.2.4",
+    "node-sass": "^4.11.0",
+    "cross-env": "^5.2.0",
+    "typescript": "^3.3.3333",
+    "wait-on": "^3.2.0"
   }
 }
