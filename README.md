@@ -3,6 +3,7 @@
 react-electron is a simple boilerplate that integrates react in an electron app
 
 ## Installation
+First clone the project ```git clone --depth=1 https://github.com/NtsCiccio/react-electron.git```
 
 Required [node](https://nodejs.org/it/) >=v13.6.0 to install all the dependecies
 use this command
