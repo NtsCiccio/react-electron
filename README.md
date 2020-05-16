@@ -10,9 +10,11 @@ use this command
 ```npm install```
 
 ## Usage
-Run in developer mode ```npm run electron-dev```.  
-Create executable for Linux Windows and MacOS ```npm run electron-pack```.  
-(a script will be added for each OS soon)
+Run in developer mode ```npm run start-dev```  
+Create executable for Linux Windows and MacOS ```npm run epack-all```  
+Create executable for Linux ```npm run epack-lnx``` 
+Create executable for Windows ```npm run epack-win``` 
+Create executable for MacOS ```npm run epack-mac``` 
 
 ## Contributing
 Pull requests are welcome. For major changes please first open an issue,  to discuss what you would like to change. 

@@ -10,9 +10,17 @@
   "build": {
     "appId": "com.NTS.app",
     "productName": "ProvaReactElectron",
-    "copyright": "Copyright © 2019 ${author}",
+    "copyright": "Copyright © 2020 ${author}",
     "mac": {
-      "category": "public.app-category.utilities"
+      "category": "Utility"
+    },
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "deb",
+        "snap",
+        "AppImage"
+      ]
     },
     "files": [
       "build/**/*",
@@ -35,10 +43,13 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\" --kill-others",
+    "start-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\" --kill-others",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "npm run build",
-    "electron-pack": "build -mwl"
+    "pack-all": "npm run preelectron-pack && build -mwl",
+    "pack-mac": "npm run preelectron-pack && build -m",
+    "pack-win": "npm run preelectron-pack && build -w",
+    "pack-lnx": "npm run preelectron-pack && build -l"
   },
   "eslintConfig": {
     "extends": "react-app"
