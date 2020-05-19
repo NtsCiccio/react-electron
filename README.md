@@ -12,11 +12,11 @@ use this command
 
 ## Usage
 
-Run in developer mode `npm run start-dev`
-Create executable for Linux Windows and MacOS `npm run pack-all`
-Create executable for Linux `npm run pack-lnx`
-Create executable for Windows `npm run pack-win`
-Create executable for MacOS `npm run pack-mac`
+Run in developer mode `npm run start-dev`   
+Create executable for Linux Windows and MacOS `npm run pack-all`   
+Create executable for Linux `npm run pack-lnx`   
+Create executable for Windows `npm run pack-win`   
+Create executable for MacOS `npm run pack-mac`   
 
 ## Contributing
 
