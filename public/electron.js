@@ -1,27 +1,19 @@
 const electron = require('electron');
-const { app, BrowserWindow, Menu } = electron;
-
 const path = require('path');
 const isDev = require('electron-is-dev');
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+
+const { app, BrowserWindow, Menu } = electron;
 
 let mainWindow;
 
-const installExtensions = async () => {
-  const installer = require('electron-devtools-installer');
-  const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-  for (const name of extensions) {
-    try {
-      await installer.default(installer[name], forceDownload);
-    } catch (e) {
-      console.log(`Error installing ${name} extension: ${e.message}`);
-    }
-  }
-};
-
 function createWindow() {
   if (isDev) {
-    installExtensions();
+    installExtension(REACT_DEVELOPER_TOOLS)
+      // eslint-disable-next-line no-console
+      .then((name) => console.log(`Added Extension:  ${name}`))
+      // eslint-disable-next-line no-console
+      .catch((err) => console.log('An error occurred: ', err));
   }
 
   mainWindow = new BrowserWindow({

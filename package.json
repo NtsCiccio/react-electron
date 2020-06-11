@@ -35,7 +35,8 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-script": "^2.0.5",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "electron": "^4.0.6"
   },
   "homepage": "./",
   "main": "public/electron.js",
@@ -75,7 +76,6 @@
     "@rescripts/rescript-env": "^0.0.5",
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
-    "electron": "^4.0.6",
     "electron-builder": "^20.38.5",
     "electron-devtools-installer": "^2.2.4",
     "eslint": "^6.8.0",
